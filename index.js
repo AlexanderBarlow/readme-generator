@@ -70,7 +70,7 @@ const init = () => {
         return generate(input);
     })
     .then((error, markdown) => {
-        writeToFile('./dist/README.md', markdown);
+        writeToFile('./gen/README.md', markdown);
     })
 }
 
