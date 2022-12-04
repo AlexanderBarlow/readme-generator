@@ -5,8 +5,9 @@ const generate = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = () => {
-     inquirer
-        .prompt([{
+    inquirer
+        .prompt([
+    {
         type: 'input',
         message: 'What is your GitHub username?',
         name: 'username'
@@ -24,7 +25,8 @@ const questions = () => {
     {
         type: 'input',
         message: 'Please write a short description of your project.',
-        name: 'description'
+        name: 'description',
+        choices: 'MIT, Apache 2.0, The Unlicense, Boost Software License 1.0, None' 
     },
     {
         type: 'list',
@@ -69,7 +71,7 @@ const init = () => {
     .then(input => {
         return generate(input);
     })
-    .then((error, markdown) => {
+    .then(markdown => {
         writeToFile('./gen/README.md', markdown);
     })
 }
