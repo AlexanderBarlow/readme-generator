@@ -5,7 +5,8 @@ const generate = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = () => {
-    return inquirer.createPromptModule([{
+     inquirer
+        .prompt([{
         type: 'input',
         message: 'What is your GitHub username?',
         name: 'username'
@@ -50,6 +51,9 @@ const questions = () => {
         message: 'What does the user need to know about contributing to the repo?',
         name: 'contribute'
     }])
+    .then(input => {
+        return input;
+    })
 }
 
 // TODO: Create a function to write README file
