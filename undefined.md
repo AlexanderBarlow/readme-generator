@@ -1,7 +1,7 @@
-#test
+#ReadMe Generator
   ![License Badge](https://img.shields.io/badge/license-MIT-brightgreen)
   ## Description
-  test
+  This application generates readme files based on a few questions.
   ## Table of Contents
   * [Installation](##Installation)
   * [Usage](##Usage)
@@ -11,18 +11,18 @@
   * [Questions](##Questions)
   ***
   ## Installation
-  test
+  npm i
   ## Usage
-  test
+  Use the terminal command node index.js to run
   ## License 
       ### MIT License
       
   ## Contributing
-  test
+  Contact me via email.
   ## Tests
-  test
+  none
   
   ## Questions
   Contact Information is below. 
-  Email: test 
-  GitHub : [test](https://github.com/test)
+  Email: alex.barlow@rocketmail.com 
+  GitHub : [AlexanderBarlow](https://github.com/AlexanderBarlow)

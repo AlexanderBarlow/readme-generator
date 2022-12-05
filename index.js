@@ -52,21 +52,32 @@ const questions = () => {
         message: 'What does the user need to know about contributing to the repo?',
         name: 'contribute'
     }])
-    .then (input => {
+    .then((input) => {
+        console.log(input.Title);
         return input;
     })
+}
+
+// TODO: Create a function to write README file
+const writeToFile = (input) => {
+    console.log(input.Title);
+    fs.writeFile(`${input.Title}.md`, input, err => 
+        err? console.error(err) : console.log('Your Readme file has been generated.')
+);
+};
+
+// TODO: Create a function to initialize app
+const init = () => {
+    questions()
+
     .then(input => {
         return generate(input);
     })
     .then(input => {
         console.log(input.Title)
-        fs.writeFile(`${input.Title}.md`, (input), (err) => {
-        err? console.error(err) : console.log('Your Readme file has been generated.')
-        });
+        writeToFile(input);
     })
 }
 
-// TODO: Create a function to initialize app
-const init = () => questions()
 // Function call to initialize app
 init();
