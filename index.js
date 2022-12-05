@@ -25,13 +25,13 @@ const questions = () => {
     {
         type: 'input',
         message: 'Please write a short description of your project.',
-        name: 'description',
-        choices: 'MIT, Apache 2.0, The Unlicense, Boost Software License 1.0, None' 
+        name: 'description', 
     },
     {
         type: 'list',
         message: 'What kind of license would you like your project to have?',
-        name: 'license'
+        name: 'license',
+        choices: 'MIT, Apache 2.0, The Unlicense, Boost Software License 1.0, None'
     },
     {
         type: 'input',
