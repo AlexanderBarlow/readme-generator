@@ -58,8 +58,8 @@ const questions = () => {
 }
 
 // TODO: Create a function to write README file
-const writeToFile = (fileName, input) => {
-    fs.writeFile(fileName, input, (err) => {
+const writeToFile = (input) => {
+    fs.writeFile(`${input.Title}.md`, input, (err) => {
         err ? console.error(err) :
         console.log('Your Readme file has been generated.')
     })
@@ -71,8 +71,8 @@ const init = () => {
     .then(input => {
         return generate(input);
     })
-    .then(markdown => {
-        writeToFile('./gen/README.md', markdown);
+    .then(input => {
+        writeToFile(input);
     })
 }
 
