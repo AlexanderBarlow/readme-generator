@@ -59,11 +59,10 @@ const questions = () => {
 
 // TODO: Create a function to write README file
 const writeToFile = (input) => {
-    fs.writeFile(`${input.Title}.md`, input, (err) => {
-        err ? console.error(err) :
-        console.log('Your Readme file has been generated.')
-    })
-}
+    fs.writeFile(`${input.Title}.md`, input, (err) => 
+        err? console.error(err) : console.log('Your Readme file has been generated.')
+    );
+};
 
 // TODO: Create a function to initialize app
 const init = () => {
