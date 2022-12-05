@@ -5,8 +5,7 @@ const generate = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = () => {
-    inquirer
-        .prompt([
+    return inquirer.prompt([
     {
         type: 'input',
         message: 'What is your GitHub username?',
@@ -31,7 +30,7 @@ const questions = () => {
         type: 'list',
         message: 'What kind of license would you like your project to have?',
         name: 'license',
-        choices: 'MIT, Apache 2.0, The Unlicense, Boost Software License 1.0, None'
+        choices: ['MIT', 'Apache 2.0', 'The Unlicense', 'Boost Software License 1.0', 'None']
     },
     {
         type: 'input',
@@ -59,8 +58,9 @@ const questions = () => {
 }
 
 // TODO: Create a function to write README file
-const writeToFile = (fileName, data) => {
-    fs.writeFile(fileName, data => {
+const writeToFile = (fileName, input) => {
+    fs.writeFile(fileName, input, (err) => {
+        err ? console.error(err) :
         console.log('Your Readme file has been generated.')
     })
 }
