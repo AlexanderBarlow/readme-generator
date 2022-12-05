@@ -10,17 +10,17 @@ const renderLicenseBadge = (license) => {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-const renderLicenseLink = (license) => {
-  if(license === 'MIT') {
-    return `###MIT License`;
-  }else if(license === 'Apache 2.0') {
-    return `###Apache 2.0 License`;
-  }else if(license === 'The Unlicense') {
-    return `###The Unlicense License`;
-  }else if(license === 'Boost Software License 1.0') {
-    return `###Boost Software License 1.0`;
+const renderLicenseLink = (data) => {
+  if(data.license === 'MIT') {
+    return `### MIT License`;
+  }else if(data.license === 'Apache 2.0') {
+    return `### Apache 2.0 License`;
+  }else if(data.license === 'The Unlicense') {
+    return `### The Unlicense License`;
+  }else if(data.license === 'Boost Software License 1.0') {
+    return `### Boost Software License 1.0`;
   } else {
-    return ``;
+    return `No License Selected`;
   }
 }
 
@@ -28,9 +28,11 @@ const renderLicenseLink = (license) => {
 // If there is no license, return an empty string
 const renderLicenseSection = (license) => {
   if (license == 'None') {
-      return `##License There has not been any license set for this project.`;
+      return `## License There has not been any license set for this project.`;
     }else {
-      return `##License ${renderLicenseLink(license)}`;
+      return `## License 
+      ${renderLicenseLink(license)}
+      `;
     }
   } 
 
