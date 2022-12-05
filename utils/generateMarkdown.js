@@ -1,14 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
-  if (license == 'MIT') {
-    return `![License Badge]()`;
-  } else if (license == 'MIT') {
-    return `![License Badge]()`;
-  } else if (license == 'MIT') {
-    return `![License Badge]()`;
-  } else if (license == 'MIT') {
-    return `![License Badge]()`;
+  if (license !== 'None') {
+    return `![License Badge](https://img.shields.io/badge/license-${license.split(" ").join("")}-brightgreen)`;
   } else if (license == 'None') {
     return ``;
   }
